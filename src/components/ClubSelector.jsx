@@ -66,7 +66,7 @@ class ClubSelector extends React.Component {
         {this.renderReasonButton("LL")}
 
         <div className="vertical-row" style={{ width: 55 + "%" }}>
-          {this.renderReasonButton("Top")}
+          {this.renderReasonButton("Thin")}
 
           <div className="horizontal-row">
             {this.renderReasonButton("Left", { height: 150 + "px" })}
