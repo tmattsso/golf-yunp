@@ -34,6 +34,15 @@
   color: white;
 }
 
+.app-header-text {
+  overflow: hidden;
+}
+.app-header-text .asd {
+  font-size: 36pt;
+  background-color: black;
+  transform: scaleX(1.5);
+} 
+
 .main-wrapper {
   width: 100%;
   flex-grow: 1;
@@ -125,14 +134,23 @@ button {
   flex-direction: column;
 }
 
+.shot-list-wrapper .header-text  {
+  margin-bottom: 20px;
+}
+
 .shot-list-wrapper .shot-list-item {
   display: flex;
   text-align: left;
+  margin: 10px 0;
 }
 .shot-list-wrapper .shot-list-item .text {
-  width: 100px;
+  width: 125px;
   padding-left: 10px;
 }
 .shot-list-wrapper .shot-list-item .count {
   flex-grow: 1;
+}
+.shot-list-wrapper .shot-list-item button {
+  width: 50px;
+  margin-right: 10px;
 }

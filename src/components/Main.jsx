@@ -1,4 +1,3 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import ClubSelector from "./ClubSelector";
 import Hole from "./Hole";
@@ -14,6 +13,7 @@ class Main extends React.Component {
     this.addShot = this.addShot.bind(this);
     this.changeHole = this.changeHole.bind(this);
     this.removeShot = this.removeShot.bind(this);
+    this.storeRound = this.storeRound.bind(this);
   }
 
   addShot(club, reason) {
@@ -39,6 +39,16 @@ class Main extends React.Component {
     });
   }
 
+  storeRound() {
+    console.log("storing round for later...");
+
+    var json = {
+      date: new Date(),
+      shots: this.state.holes.filter((v) => v != null),
+    };
+    console.log(JSON.stringify(json));
+  }
+
   removeShot(club) {
     console.log("Remove shot " + club);
 
@@ -56,7 +66,10 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main-wrapper">
-        <Hole changeHole={this.changeHole} />
+        <div className="app-header-text">
+          <div className="asd">Y U N P ?</div>
+        </div>
+        <Hole changeHole={this.changeHole} storeRound={this.storeRound} />
         <ShotList
           hole={this.state.holes[this.state.currentHole]}
           removeShot={this.removeShot}

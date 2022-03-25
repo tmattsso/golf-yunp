@@ -31,13 +31,31 @@ class Hole extends React.Component {
   }
 
   render() {
+    const backDisabled = this.state.hole == 1;
+    const forwardDisabled = this.state.hole == 18;
     return (
       <div className="hole-wrapper">
-        <button className="hole-button" onClick={this.prevHole}>
+        <button
+          className="hole-button"
+          disabled={backDisabled}
+          onClick={this.prevHole}
+        >
           &lt;
         </button>
         <div className="header-slot">Hole {this.state.hole}</div>
-        <button className="hole-button" onClick={this.nextHole}>
+        {this.state.hole % 9 == 0 && (
+          <button
+            className="hole-button store-round-button"
+            onClick={this.props.storeRound}
+          >
+            &#10004;
+          </button>
+        )}
+        <button
+          className="hole-button"
+          disabled={forwardDisabled}
+          onClick={this.nextHole}
+        >
           &gt;
         </button>
       </div>
